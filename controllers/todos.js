@@ -1,4 +1,4 @@
-const Todo = require('../models/Todo');
+const Todo = require('../models/todo');
 
 exports.getTodos = async (req, res) => {
   const todos = await Todo.find();
