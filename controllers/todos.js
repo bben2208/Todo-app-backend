@@ -19,3 +19,5 @@ exports.deleteTodo = async (req, res) => {
   await Todo.findByIdAndDelete(req.params.id);
   res.redirect('/todos');
 };
+
+console.log("todos controller loaded");
