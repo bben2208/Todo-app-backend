@@ -1,0 +1,15 @@
+<%- include('../layouts/header') %>
+
+<h1>Notes</h1>
+<form action="/notes/add" method="POST">
+    <input type="text" name="note" placeholder="Enter a note" required>
+    <button type="submit">Add Note</button>
+</form>
+
+<ul>
+    <% notes.forEach(note => { %>
+        <li><%= note.text %> (Added on <%= note.createdAt.toDateString() %>)</li>
+    <% }) %>
+</ul>
+
+<%- include('../layouts/footer') %>

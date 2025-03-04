@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+}
