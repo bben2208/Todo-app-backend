@@ -1,4 +1,3 @@
-const Todo = require("../models/todo"); // Use lowercase 'todo'
 
 exports.getTodos = async (req, res) => {
   const todos = await Todo.find();
