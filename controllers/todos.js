@@ -1,4 +1,4 @@
-const Todo = require("../models/todo"); // Use lowercase 'todo'
+const Todo = require("../models/todo.js"); // Use lowercase 'todo'
 
 exports.getTodos = async (req, res) => {
   const todos = await Todo.find();
