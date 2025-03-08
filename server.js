@@ -14,6 +14,7 @@ app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Parse JSON data
 app.use(methodOverride('_method'));
 
 // Database connection
@@ -23,14 +24,17 @@ const db = require('./config/database');
 const homeRoutes = require('./routes/home');
 const todosRoutes = require('./routes/todos');
 const notesRoutes = require('./routes/notes'); // Added notes route
+const usersRoutes = require('./routes/users'); // Import users routes
 
 app.use('/', homeRoutes);
 app.use('/todos', todosRoutes);
-app.use('/notes', notesRoutes); // New route for notes
+app.use('/notes', notesRoutes); 
+app.use('/users', usersRoutes); 
 
-app.get('/users', (req, res) => {
-    res.json([]); // Temporary fix: send an empty array
-});
+// Removed temporary /users endpoint that was returning an empty array
+// app.get('/users', (req, res) => {
+//     res.json([]); // <-- Always returns an empty array!
+// });
 
 // Server listen
 const PORT = process.env.PORT || 3000;
