@@ -1,13 +1,12 @@
+// config/database.js
 const mongoose = require('mongoose');
 
-// Use DATABASE_URL from .env
-const uri = process.env.DATABASE_URL;
+console.log("MONGO_URL:", process.env.MONGO_URL); // Debug: Check that it's loaded
 
-// Debug: Log the connection string to verify it's defined
-console.log("DATABASE_URL:", uri);
+const uri = process.env.MONGO_URL;
 
 if (!uri) {
-  console.error("Missing DATABASE_URL environment variable");
+  console.error("Missing MONGO_URL environment variable");
   process.exit(1);
 }
 
